@@ -1,0 +1,9 @@
+#+TITLE: TODOs
+
+* Turns
+
+** Non player turns
+
+The engine simulates a characters turn, the character has their
+stats updated, using those stats the engine surfaces available
+actions, in order of relevance, each action takes AC.
