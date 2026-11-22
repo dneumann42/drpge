@@ -12,6 +12,15 @@ proc stepPlayerTurn*(rpg: var DRPGE, playerId: CharacterId) =
 
 proc run(game: var Game) =
   let playerId = game.rpg.spawn()
+  
+  let townA = SettlementId"a"
+  let pubA = PointOfInterestId"pub"
+
+  game.rpg.add Settlement.init(townA, Town, "AAA")
+  game.rpg.add townA, Building(id: pubA, name: "Ye Hairy Leg")
+  game.rpg.add Settlement.init(SettlementId"b", City, "BBB")
+  
+  game.rpg.place playerId, (townA, pubA)
 
   while game.running:
     game.rpg.beginTurn()
